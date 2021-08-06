@@ -184,9 +184,9 @@ function ControlledBoard({
       }}
       {...(renderColumnHeader && { renderColumnHeader: renderColumnHeader })}
       renderCard={(_column, card, dragging) => {
-        if (renderCard) return renderCard(card, { dragging })
+        if (renderCard) return renderCard(card, { dragging },_column)
         return (
-          <DefaultCard dragging={dragging} allowRemoveCard={allowRemoveCard} onCardRemove={onCardRemove}>
+          <DefaultCard dragging={dragging} allowRemoveCard={allowRemoveCard} onCardRemove={onCardRemove} column={_column}>
             {card}
           </DefaultCard>
         )
