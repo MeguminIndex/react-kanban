@@ -75,7 +75,8 @@
     "contributors:add": "all-contributors add",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "cypress": "cypress",
-    "dev": "cross-env NODE_ENV=cypress start-test server 8080 'cypress open'"
+    "dev": "cross-env NODE_ENV=cypress start-test server 8080 'cypress open'",
+    "build": "tsc"
   },
   "dependencies": {
     "react-beautiful-dnd": "^13.0.0"
