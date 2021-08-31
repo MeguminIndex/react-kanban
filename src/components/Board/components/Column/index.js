@@ -42,22 +42,26 @@ function Column({
           >
             <div {...columnProvided.dragHandleProps}>{renderColumnHeader(children)}</div>
             {allowAddCard && <CardAdder column={children} onConfirm={onCardNew} />}
-            <DroppableColumn droppableId={String(children.id)}>
-              {children.cards.length ? (
-                children.cards.map((card, index) => (
-                  <Card
-                    key={card.id}
-                    index={index}
-                    renderCard={(dragging) => renderCard(children, card, dragging)}
-                    disableCardDrag={disableCardDrag}
-                  >
-                    {card}
-                  </Card>
-                ))
-              ) : (
-                <div className='react-kanban-card-skeleton' />
-              )}
-            </DroppableColumn>
+            { children.collapse !== true || children.collapseDrop === true ? /* hide the droppable  */
+              <DroppableColumn droppableId={String(children.id)}>
+                {children.collapse !== true && children.cards.length ? (
+                  children.cards.map((card, index) => (
+                    <Card
+                      key={card.id}
+                      index={index}
+                      renderCard={(dragging) => renderCard(children, card, dragging)}
+                      disableCardDrag={disableCardDrag}
+                    >
+                      {card}
+                    </Card>
+                  ))
+                ) : (
+                  <div className='react-kanban-card-skeleton' />
+                )}
+              </DroppableColumn>
+              :
+              null
+            }
           </div>
         )
       }}

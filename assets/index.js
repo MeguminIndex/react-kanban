@@ -8,6 +8,9 @@ const board = {
     {
       id: '0206c8d7-4d48-4d97-b867-86fc2d21074d',
       title: 'Column Backlog',
+      // collapse: true,
+      // collapseDrop: true,
+      
       cards: [
         {
           id: '0206c8d7-4d48-4d97-b867-86fc2d21075d',
