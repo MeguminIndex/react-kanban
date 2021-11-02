@@ -16,7 +16,7 @@ import {
 } from './services'
 import { moveCard, moveColumn, addColumn, removeColumn, changeColumn, addCard, removeCard } from '@services/helpers'
 
-const Columns = forwardRef((props, ref) => <div ref={ref} style={{ whiteSpace: 'nowrap' }} {...props} />)
+const Columns = forwardRef((props, ref) => <div ref={ref} style={{ whiteSpace: 'nowrap' }} {...props} className='react-kanban-board-droppable' />)
 
 const DroppableBoard = withDroppable(Columns)
 

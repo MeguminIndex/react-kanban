@@ -6,7 +6,7 @@ import CardAdder from './components/CardAdder'
 import { pickPropOut } from '@services/utils'
 
 const ColumnEmptyPlaceholder = forwardRef((props, ref) => (
-  <div ref={ref} style={{ minHeight: 'inherit', height: 'inherit' }} {...props} />
+  <div ref={ref} style={{ minHeight: 'inherit', height: 'inherit' }} {...props} className='react-kanban-column-droppablecolumn' />
 ))
 
 const DroppableColumn = withDroppable(ColumnEmptyPlaceholder)
@@ -43,7 +43,7 @@ function Column({
             <div {...columnProvided.dragHandleProps}>{renderColumnHeader(children)}</div>
             {allowAddCard && <CardAdder column={children} onConfirm={onCardNew} />}
             { children.collapse !== true || children.collapseDrop === true ? /* hide the droppable  */
-              <DroppableColumn droppableId={String(children.id)}  className='react-kanban-column-droppablecolumn'>
+              <DroppableColumn droppableId={String(children.id)}  >
                 {children.collapse !== true && children.cards.length ? (
                   children.cards.map((card, index) => (
                     <Card
