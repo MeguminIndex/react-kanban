@@ -43,7 +43,7 @@ function Column({
             <div {...columnProvided.dragHandleProps}>{renderColumnHeader(children)}</div>
             {allowAddCard && <CardAdder column={children} onConfirm={onCardNew} />}
             { children.collapse !== true || children.collapseDrop === true ? /* hide the droppable  */
-              <DroppableColumn droppableId={String(children.id)}>
+              <DroppableColumn droppableId={String(children.id)}  className='react-kanban-column-droppablecolumn'>
                 {children.collapse !== true && children.cards.length ? (
                   children.cards.map((card, index) => (
                     <Card
