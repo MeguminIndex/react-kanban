@@ -69,14 +69,9 @@
     "prepublishOnly": "webpack --config webpack.prod.js",
     "prepare": "webpack --config webpack.prod.js",
     "server": "webpack-dev-server --config webpack.dev.js",
-    "test": "jest",
-    "jest:watch": "jest --no-coverage --watch --runInBand --notify --notifyMode always",
-    "lint": "eslint 'src/**/*.{js,ts,tsx}' 'cypress/**/*.js'",
-    "contributors:add": "all-contributors add",
+    
     "start": "webpack-dev-server --open --config webpack.dev.js",
-    "cypress": "cypress",
-    "dev": "cross-env NODE_ENV=cypress start-test server 8080 'cypress open'",
-    "devTwo": "cross-env NODE_ENV=cypress npm run server 8080 && npm run cypress run",
+
     "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
