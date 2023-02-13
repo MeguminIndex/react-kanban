@@ -28,9 +28,8 @@ module.exports = {
     extensions: ['.ts', '.js', '.json', '.scss']
   },
   devtool: 'inline-source-map',
-  devServer: {
-    watchOptions: {
-      ignored: /node_modules/
-    }
+  
+  watchOptions: {
+    ignored: /node_modules/
   }
 }
